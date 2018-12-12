@@ -1,19 +1,27 @@
-import { UsersService } from './../users.service';
-import { JwtPayload } from './interfaces/jwt-payload';
-import { Injectable } from '@nestjs/common';
+import { GetUserDTO } from '../models/user/get-user.dto';
+import { UserLoginDTO } from '../models/user/user-login.dto';
+import { UsersService } from '../common/core/users.service';
 import { JwtService } from '@nestjs/jwt';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { JwtPayload } from './../interfaces/jwt-payload';
 
 @Injectable()
 export class AuthService {
   constructor(
+    private readonly usersService: UsersService,
     private readonly jwtService: JwtService,
-    private readonly usersService: UsersService) { }
+  ) { }
 
-  async sign(payload: JwtPayload): Promise<string> {
-    return await this.jwtService.sign(payload);
+  public async signIn(user: UserLoginDTO): Promise<string> {
+    const userFound = await this.usersService.signIn(user);
+    if (userFound) {
+      return this.jwtService.sign({ email: userFound.email, isAdmin: userFound.isAdmin });
+    } else {
+      throw new NotFoundException('Wrong credentials');
+    }
   }
 
-  async validateUser(payload: JwtPayload) {
-    return !!this.usersService.getByUsername(payload.username);
+  async validateUser(payload: JwtPayload): Promise<GetUserDTO> {
+    return await this.usersService.validateUser(payload);
   }
 }

@@ -1,23 +1,33 @@
-import { JwtStrategy } from './auth/jwt.startegy';
-import { UsersService } from './users.service';
-import { HttpExceptionFilter } from './filters/http-exception.filter';
-import { Module } from '@nestjs/common';
-import { JwtModule, JwtService } from '@nestjs/jwt';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { PassportModule } from '@nestjs/passport';
-import { AuthService } from './auth/auth.service';
+import { ConfigService } from './config/config.service';
+import { Module, HttpModule } from '@nestjs/common';
+import { ConfigModule } from './config/config.module';
+import { AuthModule } from './auth/auth.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsersModule } from './users/users.module';
+import { CoreModule } from './common/core/core.module';
 
 @Module({
-  imports: [PassportModule.register({ defaultStrategy: 'jwt' }),
-  JwtModule.register({
-    secretOrPrivateKey: 'secret',
-    signOptions: {
-    expiresIn: 3600, // Entirely optional
-    },
-  }),
-],
-  controllers: [AppController],
-  providers: [AppService, JwtStrategy, UsersService, AuthService],
+  imports: [
+    ConfigModule,
+    HttpModule,
+    AuthModule,
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        type: configService.dbType as any,
+        host: configService.dbHost,
+        port: configService.dbPort,
+        username: configService.dbUsername,
+        password: configService.dbPassword,
+        database: configService.dbName,
+        entities: ['./src/data/entities/*.entity.ts'],
+      }),
+      inject: [ConfigService],
+    }),
+    UsersModule,
+    CoreModule,
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule { }
