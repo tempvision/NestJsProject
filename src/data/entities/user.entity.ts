@@ -9,15 +9,19 @@ export class User {
   id: number;
 
   @Column()
+  firstName: string;
+
+  @Column()
+  lastName: string;
+
+  @Column()
   @IsEmail()
   email: string;
 
   @Column()
   password: string;
 
-  @Column()
-  avatarUrl: string;
-
   @Column({default: false})
   isAdmin: boolean;
+
 }

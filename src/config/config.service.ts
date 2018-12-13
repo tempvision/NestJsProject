@@ -32,14 +32,14 @@ export class ConfigService {
         .valid(['development', 'production', 'test', 'provision'])
         .default('development'),
       PORT: Joi.number().default(3000),
-      JWT_SECRET: Joi.string().required(),
+      JWT_SECRET: Joi.string().default('swordfish'),
       JWT_EXPIRE: Joi.number().default(3600 * 24 * 7),
       DB_TYPE: Joi.string().default('mysql'),
       DB_HOST: Joi.string().default('localhost'),
       DB_PORT: Joi.number().default(3306),
       DB_USERNAME: Joi.string().default('root'),
-      DB_PASSWORD: Joi.string().default('root'),
-      DB_DATABASE_NAME: Joi.string().required(),
+      DB_PASSWORD: Joi.string().default('admin'),
+      DB_DATABASE_NAME: Joi.string().default('m-n_project'),
     });
 
     const { error, value: validatedEnvConfig } = Joi.validate(
