@@ -38,7 +38,7 @@ export class ConfigService {
       DB_HOST: Joi.string().default('localhost'),
       DB_PORT: Joi.number().default(3306),
       DB_USERNAME: Joi.string().default('root'),
-      DB_PASSWORD: Joi.string().default('admin'),
+      DB_PASSWORD: Joi.string().default('root'),
       DB_DATABASE_NAME: Joi.string().default('m-n_project'),
     });
 
