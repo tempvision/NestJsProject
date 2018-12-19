@@ -1,17 +1,17 @@
-import { Column, PrimaryGeneratedColumn, Entity } from 'typeorm';
+import { Column, PrimaryGeneratedColumn, Entity, OneToMany, JoinTable, ManyToMany } from 'typeorm';
 import { IsEmail } from 'class-validator';
+import { UserAnswer } from './user-answer.entity';
 
-@Entity({
-  name: 'users',
-})
+@Entity('user')
 export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
 
-  @Column()
+  @PrimaryGeneratedColumn('uuid')
+  userId: string;
+
+  @Column('nvarchar')
   firstName: string;
 
-  @Column()
+  @Column('nvarchar')
   lastName: string;
 
   @Column()
@@ -21,7 +21,10 @@ export class User {
   @Column()
   password: string;
 
-  @Column({default: false})
+  @Column({ default: false })
   isAdmin: boolean;
+
+  @OneToMany(type => UserAnswer, userAnswer => userAnswer.user)
+  userAnswer: UserAnswer[];
 
 }
