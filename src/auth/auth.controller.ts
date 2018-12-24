@@ -27,5 +27,5 @@ export class AuthController {
   })) user: UserLoginDTO): Promise<string> {
     return await this.authService.signIn(user);
   }
-
+  //
 }
