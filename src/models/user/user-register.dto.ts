@@ -1,4 +1,4 @@
-import { IsString, Length, Matches, IsOptional, IsEmail } from 'class-validator';
+import { IsString, Matches, IsEmail } from 'class-validator';
 
 export class UserRegisterDTO {
 
