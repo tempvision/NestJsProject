@@ -1,3 +1,5 @@
+import { QuizService } from './quiz/quiz.service';
+import { QuizModule } from './quiz/quiz.module';
 import { ConfigService } from './config/config.service';
 import { Module, HttpModule } from '@nestjs/common';
 import { ConfigModule } from './config/config.module';
@@ -12,7 +14,7 @@ import { CoreModule } from './common/core/core.module';
     HttpModule,
     AuthModule,
     TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
+      imports: [ConfigModule, QuizModule],
       useFactory: async (configService: ConfigService) => ({
         type: configService.dbType as any,
         host: configService.dbHost,
@@ -25,8 +27,8 @@ import { CoreModule } from './common/core/core.module';
       inject: [ConfigService],
     }),
     UsersModule,
-    CoreModule,
-  ],
+    QuizModule,
+    CoreModule],
   controllers: [],
   providers: [],
 })
