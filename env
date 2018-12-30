@@ -1,0 +1,3 @@
+JWT_SECRET=sw0rdf!sh
+DB_DATABASE_NAME=m-n_project
+DB_PASSWORD=admin
