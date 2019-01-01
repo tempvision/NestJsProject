@@ -2,18 +2,16 @@ import { Column, PrimaryGeneratedColumn, Entity, ManyToOne, OneToMany} from 'typ
 import { JsModule } from './js-module.entity';
 import { Question } from './question.entity';
 
-@Entity('weeksOfModule')
-export class WeekOfModule {
-
+@Entity('partOfModule')
+export class PartOfModule {
   @PrimaryGeneratedColumn('uuid')
-  weekId: string;
+  partId: string;
 
   @Column()
-  numberOfWeek: number;
-  @ManyToOne(type => JsModule, module => module.week)
-  module: JsModule;
+  partName: string;
+  @ManyToOne(type => JsModule, module => module.partOfModule)
+  jsModule: JsModule;
 
-  @OneToMany(type => Question, question => question.week)
+  @OneToMany(type => Question, question => question.partOfModule)
   question: Question[];
-
 }

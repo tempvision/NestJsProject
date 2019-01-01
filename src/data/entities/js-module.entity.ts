@@ -1,9 +1,8 @@
 import { Column, PrimaryGeneratedColumn, Entity, ManyToMany, ManyToOne, OneToMany } from 'typeorm';
-import { WeekOfModule } from './week-of-module.entity';
+import { PartOfModule } from './part-of-module.entity';
 
 @Entity('jsModule')
 export class JsModule {
-
   @PrimaryGeneratedColumn('uuid')
   modileId: string;
 
@@ -13,7 +12,6 @@ export class JsModule {
   @Column()
   isActive: boolean;
 
-  @OneToMany(type => WeekOfModule, week => week.module)
-  week: WeekOfModule[];
-
+  @OneToMany(type => PartOfModule, part => part.jsModule)
+  partOfModule: PartOfModule[];
 }
