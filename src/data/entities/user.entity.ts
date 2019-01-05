@@ -8,18 +8,18 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   userId: string;
 
-  @Column('nvarchar')
-  firstName: string;
-
-  @Column('nvarchar')
-  lastName: string;
-
   @Column()
   @IsEmail()
   email: string;
 
   @Column()
   password: string;
+
+  @Column('nvarchar')
+  firstName: string;
+
+  @Column('nvarchar')
+  lastName: string;
 
   @Column({ default: false })
   isAdmin: boolean;

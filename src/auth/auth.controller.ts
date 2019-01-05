@@ -27,5 +27,23 @@ export class AuthController {
   })) user: UserLoginDTO): Promise<string> {
     return await this.authService.signIn(user);
   }
-  //
+  @Post('register')
+  async register(
+    @Body(new ValidationPipe({
+      transform: true,
+      whitelist: true,
+    }))
+    user: UserRegisterDTO): Promise<string> {
+
+    try {
+      await this.usersService.registerUser(user);
+      return 'saved';
+    } catch (error) {
+      await new Promise((resolve, reject) => {
+        resolve();
+      });
+
+      return (error.message);
+    }
+  }
 }

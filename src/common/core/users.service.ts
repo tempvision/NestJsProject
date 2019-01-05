@@ -16,13 +16,13 @@ export class UsersService {
     @InjectRepository(User)
     private readonly usersRepository: Repository<User>,
 
-    ) { }
+  ) { }
 
   async registerUser(user: UserRegisterDTO) {
     const userFound = await this.usersRepository.findOne({ where: { email: user.email } });
 
     if (userFound) {
-      throw new BadRequestException('There is already such user registered!');
+      throw new Error('User not found!');
     }
 
     user.password = await bcrypt.hash(user.password, 10);
