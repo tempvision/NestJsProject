@@ -1,0 +1,63 @@
+{
+  "quiz": {
+    "module2": {
+      "JavaScript Advanced": [{
+          "question": "What is a 'closure' in JavaScript",
+          "options": [ "Some thing in JS", "Don't know", "Closure is a locally declared variable related to a function which stays in memory when the function has returned " ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "What is NaN? What is its type",
+          "options": [ "Undefined", "Number", "Boolean" ],
+          "answer": [ 0, 1, 0 ]
+        },
+        {
+          "question": "When we use const?",
+          "options": [ "Every time", "Don't know", "Variable that is not available to be reassigned" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "What means 'use strict'?",
+          "options": [ "Don't know", "Method in js", " JavaScript shows errors for a piece of codes, which did not show an error before, but might be problematic and potentially unsafe" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "What is function scope?",
+          "options": [ "Some thing in JS", "Place in code when variables can be used only in same function and nested function. ", "Don't know" ],
+          "answer": [ 0, 0, 1 ]
+        }
+      ],
+      "TypeScript (OOP & HQC)": [{
+          "question": "List that contains connection link to first link in a",
+          "options": [ "Link", "Linked List", "First Link" ],
+          "answer": [ 0, 1, 0 ]
+        },
+        {
+          "question": "A search that is made over all items one by one is called ",
+          "options": [ "Binary search", "Bubble search", "Linear search" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "In Doubly Linked list, each link carries a data field(s) and",
+          "options": [ "1 link field", "2 link fields", "3 link fields" ],
+          "answer": [ 0, 1, 0 ]
+        },
+        {
+          "question": "Binary search has a worst-case complexity of",
+          "options": [ "O(log n)", "O(nk)", "O(n + k)" ],
+          "answer": [ 1, 0, 0 ]
+        },
+        {
+          "question": "Sorting is important because of",
+          "options": [ "Optimized time consume", "Optimized space", "Optimized searching" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "For identification, each location of an element in an array has a/an",
+          "options": [ "Node", "Index", "Entity" ],
+          "answer": [ 0, 1, 0 ]
+        }
+      ]
+    }
+  }
+}
