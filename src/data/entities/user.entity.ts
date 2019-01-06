@@ -1,12 +1,13 @@
 import { Column, PrimaryGeneratedColumn, Entity, OneToMany, JoinTable, ManyToMany } from 'typeorm';
 import { IsEmail } from 'class-validator';
-import { UserAnswer } from './user-answer.entity';
+import { Question } from './question.entity';
+import { Answer } from './answer.entity';
 
 @Entity('user')
 export class User {
 
-  @PrimaryGeneratedColumn('uuid')
-  userId: string;
+  @PrimaryGeneratedColumn()
+  userId: number;
 
   @Column()
   @IsEmail()
@@ -24,7 +25,8 @@ export class User {
   @Column({ default: false })
   isAdmin: boolean;
 
-  @OneToMany(type => UserAnswer, userAnswer => userAnswer.user)
-  userAnswer: UserAnswer[];
+  @ManyToMany(type => Answer)
+  @JoinTable({name: 'UsersAnswers'})
+  answer: Answer[];
 
 }

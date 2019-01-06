@@ -3,8 +3,8 @@ import { PartOfModule } from './part-of-module.entity';
 
 @Entity('jsModule')
 export class JsModule {
-  @PrimaryGeneratedColumn('uuid')
-  modileId: string;
+  @PrimaryGeneratedColumn()
+  moduleId: number;
 
   @Column()
   moduleName: string;

@@ -1,21 +1,19 @@
-import { Column, PrimaryGeneratedColumn, Entity, PrimaryColumn, ManyToOne, OneToMany } from 'typeorm';
+import { Column, PrimaryGeneratedColumn, Entity, PrimaryColumn, ManyToOne, OneToMany, JoinTable, JoinColumn } from 'typeorm';
 import { Question } from './question.entity';
-import { UserAnswer } from './user-answer.entity';
 
 @Entity('answer')
 export class Answer {
-  @PrimaryColumn('uuid')
-  answeId: string;
+  @PrimaryGeneratedColumn()
+  answerId: number;
 
   @Column()
-  typeAnswer: string;
+  answerOptions: string;
 
   @Column()
   answerValue: number;
 
   @ManyToOne(type => Question, question => question.answer)
+  @JoinColumn({name: 'fk_questionId' })
   question: Question;
 
-  @OneToMany(type => UserAnswer, userAnswer => userAnswer.answer)
-  userAnswer: UserAnswer[];
 }
