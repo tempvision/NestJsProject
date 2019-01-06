@@ -1,3 +1,5 @@
+import { Answer } from 'src/data/entities/answer.entity';
+import { AnsService } from './ans.service';
 import { QuizController } from './quiz.controller';
 import { Question } from './../data/entities/question.entity';
 import { AuthModule } from '../auth/auth.module';
@@ -8,11 +10,11 @@ import { Module } from '@nestjs/common';
 import { QuizService } from './quiz.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Question]), CoreModule, AuthModule],
-  providers: [QuizService],
+  imports: [TypeOrmModule.forFeature([Question, Answer]), CoreModule, AuthModule],
+  providers: [QuizService, AnsService],
   exports: [],
   controllers: [QuizController],
 })
 export class QuizModule {
-  constructor(private readonly quizService: QuizService) { }
+  constructor(private readonly quizService: QuizService, private readonly ansService: AnsService) { }
 }
