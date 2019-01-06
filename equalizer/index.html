@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Equalizer</title>
+</head>
+
+<body>
+    <div class="box">
+        <a onclick="changeColor('red')" id="red">#e74c3c</a>
+        <a onclick="changeColor('blue')" id="blue">#3498db</a>
+        <a onclick="changeColor('green')" id="green">#2ecc71</a>
+        <a onclick="changeColor('gray')" id="gray">#666666</a>
+        <a onclick="changeColor('yellow')" id="yellow">#f1c40f</a>
+        <a onclick="changeColor('orange')" id="orange">#e67e22</a>
+    </div>
+    <div id="res"></div>
+    <script>
+        function changeColor(id) {
+            document.body.style.background = document.getElementById(id).innerHTML;
+            console.log(id);
+        }
+    </script>
+    <script src="./read.js"></script>
+</body>
+
+</html>

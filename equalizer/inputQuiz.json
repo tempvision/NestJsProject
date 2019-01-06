@@ -1,0 +1,173 @@
+{
+  "quiz": {
+    "input": {
+      "Data types and Variable": [ {
+          "question": "What is the type of let x = 42",
+          "options": [ "Number", "String", "Boolean" ],
+          "answer": [ 1, 0, 0 ]
+        },
+        {
+          "question": "What is the type of let y = true",
+          "options": [ "Undefined", "Array", "Boolean" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "What is the type of let z = {firstName : 'John', age: 25}",
+          "options": [ "Number", "Null", "Object" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "How do you declare a JavaScript variable?",
+          "options": [ "*", "=", "-" ],
+          "answer": [ 0, 1, 0 ]
+        }
+      ],
+      "Operators and expresion": [ {
+          "question": "How to check if given variable has equal value and type",
+          "options": [ "!=", "===", "==" ],
+          "answer": [ 1, 0, 0 ]
+        },
+        {
+          "question": "What operators we use to check if given vaiable is less than or equal to",
+          "options": [ ">>", "<<", "<=" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "If let x = true and let y = true, what was be the result of x && y ",
+          "options": [ "true", "false", "undefined" ],
+          "answer": [ 1, 0, 0 ]
+        },
+        {
+          "question": "If let x = true and let y = true, what was be the result of x || y ",
+          "options": [ "true", "false", "undefined" ],
+          "answer": [ 0, 1, 0 ]
+        }
+      ],
+      "Conditional statement": [ {
+          "question": "How to write an IF statement in JavaScript?",
+          "options": [ "if i = 5 then", "if (i === 5)", "i = 5" ],
+          "answer": [ 0, 1, 0 ]
+        },
+        {
+          "question": "How to write an IF statement for executing some code if i is NOT equal to 5?",
+          "options": [ "if (i != 5)", "if i =! 5 then", "if (i <> 5)" ],
+          "answer": [ 1, 0, 0 ]
+        },
+        {
+          "question": "If let time = 21:00 what was be the result \n if (time < 10) {\n greeting = 'Good morning'; \n } else if (time < 20) {\n greeting = 'Good day'; \n } else { \n greeting = 'Good evening'; } ",
+          "options": [ "Good morning", "Good day", "Goof evening" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "Whit what word we stops code execution in swich statement",
+          "options": [ "break", "continue", "stop" ],
+          "answer": [ 1, 0, 0 ]
+        }
+      ],
+      "Loops": [ {
+          "question": "How does a WHILE loop start?",
+          "options": [ "while i = 1 to 10", "while (i <= 10)", "while (i <= 10; i++)" ],
+          "answer": [ 0, 1, 0 ]
+        },
+        {
+          "question": "If we have: \n var i = 0;\n do {\n i += 1; \n console.log(i); \n} while (false); \n On end of this i is equal to:",
+          "options": [ "1", "0", "undefined" ],
+          "answer": [ 1, 0, 0 ]
+        },
+        {
+          "question": "With what we use for..in statement?",
+          "options": [ "Array", "Object", "String" ],
+          "answer": [ 1, 0, 0 ]
+        },
+        {
+          "question": "How does a FOR loop start?",
+          "options": [ "for (i = 0; i <= 5; i++)", "for (i = 0; i <= 5)", "for (i <= 5; i++)" ],
+          "answer": [ 1, 0, 0 ]
+        }
+      ],
+      "Array": [ {
+          "question": "What is the correct way to write a JavaScript array?",
+          "options": [ "var colors = red, green, blue",
+            "var colors = (1: red, 2: green, 3: blue)",
+            "var colors = [red, green, blue]"
+          ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "If let arr = [1,2,3] \n how we can get the second value?",
+          "options": [ "arr[0]", "arr[1]", "arr[2]" ],
+          "answer": [ 0, 1, 0 ]
+        },
+        {
+          "question": "What was the result of Array.isArray([1,2,3])?",
+          "options": [ "false", "true", "undefined" ],
+          "answer": [ 0, 1, 0 ]
+        },
+        {
+          "question": "How we can add element to the end of array ?",
+          "options": [ "push", "add", "pop" ],
+          "answer": [ 1, 0, 0 ]
+        }
+      ]
+    },
+    "module1": {
+      "Javascript Core": [ {
+          "question": "What is a 'closure' in JavaScript",
+          "options": [ "Some thing in JS", "Don't know", "Closure is a locally declared variable related to a function which stays in memory when the function has returned " ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "What is NaN? What is its type",
+          "options": [ "Undefined", "Number", "Boolean" ],
+          "answer": [ 0, 1, 0 ]
+        },
+        {
+          "question": "When we use const?",
+          "options": [ "Every time", "Don't know", "Variable that is not available to be reassigned" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "What means 'use strict'?",
+          "options": [ "Don't know", "Method in js", " JavaScript shows errors for a piece of codes, which did not show an error before, but might be problematic and potentially unsafe" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "What is function scope?",
+          "options": [ "Some thing in JS", "Place in code when variables can be used only in same function and nested function. ", "Don't know" ],
+          "answer": [ 0, 0, 1 ]
+        }
+      ],
+      "Data Structures and Algorithms": [ {
+          "question": "List that contains connection link to first link in a",
+          "options": [ "Link", "Linked List", "First Link" ],
+          "answer": [ 0, 1, 0 ]
+        },
+        {
+          "question": "A search that is made over all items one by one is called ",
+          "options": [ "Binary search", "Bubble search", "Linear search" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "In Doubly Linked list, each link carries a data field(s) and",
+          "options": [ "1 link field", "2 link fields", "3 link fields" ],
+          "answer": [ 0, 1, 0 ]
+        },
+        {
+          "question": "Binary search has a worst-case complexity of",
+          "options": [ "O(log n)", "O(nk)", "O(n + k)" ],
+          "answer": [ 1, 0, 0 ]
+        },
+        {
+          "question": "Sorting is important because of",
+          "options": [ "Optimized time consume", "Optimized space", "Optimized searching" ],
+          "answer": [ 0, 0, 1 ]
+        },
+        {
+          "question": "For identification, each location of an element in an array has a/an",
+          "options": [ "Node", "Index", "Entity" ],
+          "answer": [ 0, 1, 0 ]
+        }
+      ]
+    }
+  }
+}
