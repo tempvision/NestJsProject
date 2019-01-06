@@ -9,8 +9,10 @@ export class UserRegisterDTO {
   password: string;
 
   @IsString()
+  @Optional()
   firstName: string;
 
   @IsString()
+  @Optional()
   lastName: string;
 }

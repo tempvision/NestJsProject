@@ -1,11 +1,11 @@
-import {MigrationInterface, QueryRunner} from "typeorm";
+import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class Somename1546631893112 implements MigrationInterface {
+export class Somename1546696473379 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<any> {
         await queryRunner.query("CREATE TABLE `jsModule` (`modileId` varchar(255) NOT NULL, `moduleName` varchar(255) NOT NULL, `isActive` tinyint NOT NULL, PRIMARY KEY (`modileId`)) ENGINE=InnoDB");
         await queryRunner.query("CREATE TABLE `partOfModule` (`partId` varchar(255) NOT NULL, `partName` varchar(255) NOT NULL, `jsModuleModileId` varchar(255) NULL, PRIMARY KEY (`partId`)) ENGINE=InnoDB");
-        await queryRunner.query("CREATE TABLE `user` (`userId` varchar(255) NOT NULL, `firstName` varchar(255) NULL, `lastName` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `password` varchar(255) NOT NULL, `isAdmin` tinyint NOT NULL DEFAULT 0, PRIMARY KEY (`userId`)) ENGINE=InnoDB");
+        await queryRunner.query("CREATE TABLE `user` (`userId` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `password` varchar(255) NOT NULL, `firstName` varchar(255) NOT NULL, `lastName` varchar(255) NOT NULL, `isAdmin` tinyint NOT NULL DEFAULT 0, PRIMARY KEY (`userId`)) ENGINE=InnoDB");
         await queryRunner.query("CREATE TABLE `userAnswer` (`userAnswerId` varchar(255) NOT NULL, `userUserId` varchar(255) NULL, `answerAnsweId` varchar(255) NULL, PRIMARY KEY (`userAnswerId`)) ENGINE=InnoDB");
         await queryRunner.query("CREATE TABLE `question` (`questionId` varchar(255) NOT NULL, `question` varchar(255) NOT NULL, `partOfModulePartId` varchar(255) NULL, PRIMARY KEY (`questionId`)) ENGINE=InnoDB");
         await queryRunner.query("CREATE TABLE `answer` (`answeId` varchar(255) NOT NULL, `typeAnswer` varchar(255) NOT NULL, `answerValue` int NOT NULL, `questionQuestionId` varchar(255) NULL, PRIMARY KEY (`answeId`)) ENGINE=InnoDB");
